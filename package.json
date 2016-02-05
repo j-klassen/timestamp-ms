@@ -12,5 +12,12 @@
   "dependencies": {
     "express": "^4.13.4",
     "jade": "^1.11.0"
-  }
+  },
+	"engines": {
+		"node": "5.5.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/j-klassen/timestamp-ms"
+	}
 }
