@@ -45,6 +45,6 @@ app.get('/:date', (req, res) => {
 	res.json(obj);
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
 	console.log(`Server listening on port ${port}`);
 });
