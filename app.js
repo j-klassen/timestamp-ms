@@ -27,20 +27,19 @@ app.get('/:date', (req, res) => {
 	});
 
 	let obj = { };
+	let date;
 	
 	if (unix) {
 		// Convert unix timestamp to milliseconds
-		let date = new Date(Number(req.params.date) * 1000);
-
+		date = new Date(Number(req.params.date) * 1000);
 		obj.unix = Number(req.params.date);
-		obj.natural = date.toString() !== 'Invalid Date' ? formatter.format(date) : null;
 	} else {
-		let date = new Date(req.params.date);
-
+		date = new Date(req.params.date);
 		// Extract seconds
 		obj.unix = date.getTime() / 1000 | 0;
-		obj.natural = date.toString() !== 'Invalid Date' ? formatter.format(date) : null;
 	}
+	
+	obj.natural = date.toString() !== 'Invalid Date' ? formatter.format(date) : null;
 
 	res.json(obj);
 });
